@@ -37,7 +37,7 @@ def main():
     os.chdir(TANNER_LOCATION)
     
     if not check_port():
-        status=os.system(" python3.5 tanner  --config pepe" )
+        status=os.system(" python3.5 tanner  --config pepe&" )
         print status
 
 main()
