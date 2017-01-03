@@ -14,7 +14,7 @@ def check_port():
 def main():
     os.chdir(TANNER_LOCATION)
     
-    if !check_port():
+    if not check_port():
         status=os.system(" python3.5 tanner  --config pepe" )
         println status
 
