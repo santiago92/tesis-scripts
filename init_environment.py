@@ -16,7 +16,7 @@ def main():
     
     if not check_port():
         status=os.system(" python3.5 tanner  --config pepe" )
-        println status
+        print status
 
 main()
         
