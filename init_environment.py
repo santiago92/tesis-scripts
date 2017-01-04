@@ -35,7 +35,7 @@ def check_port():
    
 
 def main():
-    emulate_page= "hotelpanambi.com.ar"
+    emulate_page= "admin.openbts.com"
     os.chdir(TANNER_LOCATION)
     
     if not check_port():
