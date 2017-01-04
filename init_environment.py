@@ -40,10 +40,12 @@ def main():
     
     if not check_port():
         status_tanner=os.system(" python3.5 tanner  --config pepe&" )
+        os.system("bg" )
         if status_tanner == 0:
             print "El inicio de tanner fue exitoso. Iniciando Snare"
             os.chdir(SNARE_LOCATION)
-            status_snare=os.system("python3.5 snare.py  --page-dir "+ emulate_page +"--host-ip 192.168.100.166 --tanner 127.0.0.1 --skip-check-version &")
+            status_snare=os.system("python3.5 snare.py  --page-dir "+ emulate_page +"--tanner 127.0.0.1 --skip-check-version&")
+            os.system("bg" )
         if status_snare==0:
             print "El sistema tanner-snare se inicio con exito"
         
