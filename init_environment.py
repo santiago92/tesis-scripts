@@ -5,6 +5,7 @@ import subprocess
 import re
 
 
+
 TANNER_LOCATION = "/opt/tanner/bin"
 SNARE_LOCATION = "/opt/snare"
 TANNER_PORT = 8090
@@ -44,10 +45,12 @@ def main():
         if status_tanner == 0:
             print "El inicio de tanner fue exitoso. Iniciando Snare"
             os.chdir(SNARE_LOCATION)
-            status_snare=os.system("python3.5 snare.py  --page-dir "+ emulate_page +" --tanner 127.0.0.1 --skip-check-version&")
+            status_snare=os.system("python3.5 snare.py  --page-dir "+ emulate_page +" --tanner 127.0.0.1 --skip-check-version")
             os.system("bg" )
         if status_snare==0:
             print "El sistema tanner-snare se inicio con exito"
+
+
         
 main()
         
