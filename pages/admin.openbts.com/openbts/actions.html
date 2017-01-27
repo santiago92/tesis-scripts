@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>OpenBTS - Actions</title>
+<script src="/media/js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	function loadTabs(){
+		var tabs = $('#tabs-titles li'); //grab tabs
+		var contents = $('#tabs-contents div'); //grab contents
+		tabs.bind('click',function(){
+		contents.hide(); //hide all contents
+		tabs.removeClass('current'); //remove 'current' classes
+		$(contents[$(this).index()]).show(); //show tab content that matches tab title index
+		$(this).addClass('current'); //add current class on clicked tab title
+	});}
+	</script>
+<link href="media/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload="loadTabs()">
+<div id="cssmenu">
+<ul>
+<li class="active"><a href="openbts/main"><span>OpenBTS</span></a></li>
+<li><a href="smqueue/actions"><span>Smqueue</span></a></li>
+<li><a href="subscriberregistry/actions"><span>SubscriberRegistry</span></a></li>
+</ul>
+</div>
+<div id="submenu">
+<ul class="submenu">
+<li><a href="openbts/main"><span>Main</span></a></li>
+<li><a class="active" href="openbts/actions"><span>Actions</span></a></li>
+<li><a href="openbts/status"><span>Live Status</span></a></li>
+<li><a href="openbts/advanced"><span>Advanced</span></a></li>
+</ul>
+</div>
+<div id="content">
+<ul id="tabs-titles">
+<li class="current">Start OpenBTS</li>
+<li>Endcall</li>
+<li>Page</li>
+<li>Send SMS</li>
+<li>Send Simple</li>
+<li>Set power</li>
+<li>Set RX gain</li>
+<li>Set registration period</li>
+</ul>
+<div id="tabs-contents">
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<input name="command" type="hidden" value="start"/>
+<br/>
+<input type="submit" value="Start OpenBTS"/>
+</form>
+</div>
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<br/>
+					Transaction ID
+					<input name="transactionId" type="text" value=""/>
+<input name="command" type="hidden" value="endcall"/>
+<br/>
+<input type="submit" value="Endcall"/>
+</form>
+</div>
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<br/>
+					IMSI
+					<input name="imsi" type="text" value=""/>
+<br/>
+					Time
+					<input name="time" type="text" value=""/>
+<input name="command" type="hidden" value="page"/>
+<br/>
+<input type="submit" value="Page"/>
+</form>
+</div>
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<br/>
+					IMSI
+					<input name="imsi" type="text" value=""/>
+<br/>
+					Source address
+					<input name="sourceAddress" type="text" value=""/>
+<br/>
+					Text
+					<input name="text" type="text" value=""/>
+<input name="command" type="hidden" value="sendsms"/>
+<br/>
+<input type="submit" value="Send SMS"/>
+</form>
+</div>
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<br/>
+					IMSI
+					<input name="imsi" type="text" value=""/>
+<br/>
+					Source address
+					<input name="sourceAddress" type="text" value=""/>
+<br/>
+					Text
+					<input name="text" type="text" value=""/>
+<input name="command" type="hidden" value="sendsimple"/>
+<br/>
+<input type="submit" value="Send Simple"/>
+</form>
+</div>
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<br/>
+					minAtten
+					<input name="minAtten" type="text" value=""/>
+<br/>
+					maxAtten
+					<input name="maxAtten" type="text" value=""/>
+<input name="command" type="hidden" value="power"/>
+<br/>
+<input type="submit" value="Set power"/>
+</form>
+</div>
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<br/>
+					Gain
+					<input name="gain" type="text" value=""/>
+<input name="command" type="hidden" value="rxgain"/>
+<br/>
+<input type="submit" value="Set RX gain"/>
+</form>
+</div>
+<div class="content">
+<form action="/openbts/actions/" method="post">
+<br/>
+					T3212 GSM
+					<input name="T3212" type="text" value=""/>
+<br/>
+					SIP
+					<input name="SIP" type="text" value=""/>
+<input name="command" type="hidden" value="regperiod"/>
+<br/>
+<input type="submit" value="Set registration period"/>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

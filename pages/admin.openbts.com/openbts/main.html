@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>OpenBTS - Main</title>
+<link href="media/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="/media/js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function () {
+    var tabContainers = $('div.tabs > div');
+    tabContainers.hide().filter(':first').show();
+    
+    $('div.tabs ul.tabNavigation a').click(function () {
+        tabContainers.hide();
+        tabContainers.filter(this.hash).show();
+        $('div.tabs ul.tabNavigation a').removeClass('selected');
+        $(this).addClass('selected');
+        return false;
+    }).filter(':first').click();
+});
+</script>
+</head>
+<body>
+<div id="cssmenu">
+<ul>
+<li class="active"><a href="openbts/main"><span>OpenBTS</span></a></li>
+<li><a href="smqueue/actions"><span>Smqueue</span></a></li>
+<li><a href="subscriberregistry/actions"><span>SubscriberRegistry</span></a></li>
+</ul>
+</div>
+<div id="submenu">
+<ul class="submenu">
+<li><a class="active" href="openbts/main"><span>Main</span></a></li>
+<li><a href="openbts/actions"><span>Actions</span></a></li>
+<li><a href="openbts/status"><span>Live Status</span></a></li>
+<li><a href="openbts/advanced"><span>Advanced</span></a></li>
+</ul>
+</div>
+<div id="content">
+<div class="tabs">
+<ul class="tabNavigation">
+<li><a class="" href="#tab1">GSM Radio</a></li>
+<li><a class="" href="#tab2">GSM Identity</a></li>
+<li><a class="" href="#tab3">SIP</a></li>
+<li><a class="" href="#tab4">Open Registration</a></li>
+<li><a class="" href="#tab5">Logging</a></li>
+</ul>
+<div id="tab1">
+<form action="/openbts/main/" method="post">
+<table>
+<tr>
+<td><input class="btnsave" type="submit" value="Save"/></td>
+</tr>
+</table>
+</form>
+</div>
+<div id="tab2">
+<form action="/openbts/main/" method="post">
+<table>
+<tr>
+<td><input class="btnsave" type="submit" value="Save"/></td>
+</tr>
+</table>
+</form>
+</div>
+<div id="tab3">
+<form action="/openbts/main/" method="post">
+<table>
+<tr>
+<td><input class="btnsave" type="submit" value="Save"/></td>
+</tr>
+</table>
+</form>
+</div>
+<div id="tab4">
+<form action="/openbts/main/" method="post">
+<table>
+<tr>
+<td><input class="btnsave" type="submit" value="Save"/></td>
+</tr>
+</table>
+</form>
+</div>
+<div id="tab5">
+<form action="/openbts/main/" method="post">
+<table>
+<tr>
+<td><input class="btnsave" type="submit" value="Save"/></td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

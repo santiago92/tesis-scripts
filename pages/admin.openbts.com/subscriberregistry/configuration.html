@@ -1,0 +1,2162 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta content="NONE,NOARCHIVE" name="robots">
+<title>OperationalError at /subscriberregistry/configuration/</title>
+<style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h2 span { font-size:80%; color:#666; font-weight:normal; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    code, pre { font-size: 100%; }
+    table { border:1px solid #ccc; border-collapse: collapse; width:100%; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th { padding:1px 6px 1px 3px; background:#fefefe; text-align:left; font-weight:normal; font-size:11px; border:1px solid #ddd; }
+    tbody th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%; }
+    table td.code pre { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td { font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; }
+    ul.traceback li.frame { padding-bottom:1em; }
+    div.context { padding:10px 0; overflow:hidden; }
+    div.context ol { padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li { font-family:monospace; white-space:pre; color:#666; cursor:pointer; }
+    div.context ol li pre { display:inline; }
+    div.context ol.context-line li { color:black; background-color:#ccc; }
+    div.context ol.context-line li span { position:absolute; right:32px; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:black; text-decoration:none; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 0 20px; }
+    #unicode-hint { background:#eee; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+    h2 span.commands { font-size:.7em;}
+    span.commands a:link {color:#5E5694;}
+    pre.exception_value { font-family: sans-serif; color: #666; font-size: 1.5em; margin: 10px 0 10px 0; }
+  </style>
+<script type="text/javascript">
+  //<!--
+    function getElementsByClassName(oElm, strTagName, strClassName){
+        // Written by Jonathan Snook, http://www.snook.ca/jon; Add-ons by Robert Nyman, http://www.robertnyman.com
+        var arrElements = (strTagName == "*" && document.all)? document.all :
+        oElm.getElementsByTagName(strTagName);
+        var arrReturnElements = new Array();
+        strClassName = strClassName.replace(/\-/g, "\-");
+        var oRegExp = new RegExp("(^|\s)" + strClassName + "(\s|$)");
+        var oElement;
+        for(var i=0; i<arrElements.length; i++){
+            oElement = arrElements[i];
+            if(oRegExp.test(oElement.className)){
+                arrReturnElements.push(oElement);
+            }
+        }
+        return (arrReturnElements)
+    }
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(getElementsByClassName(document, 'table', 'vars'));
+      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));
+      hideAll(getElementsByClassName(document, 'ol', 'post-context'));
+      hideAll(getElementsByClassName(document, 'div', 'pastebin'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block' : 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.innerHTML = s.innerHTML == uarr ? darr : uarr;
+      return false;
+    }
+    function switchPastebinFriendly(link) {
+      s1 = "Switch to copy-and-paste view";
+      s2 = "Switch back to interactive view";
+      link.innerHTML = link.innerHTML == s1 ? s2 : s1;
+      toggle('browserTraceback', 'pastebinTraceback');
+      return false;
+    }
+    //-->
+  </script>
+</meta></meta></head>
+<body>
+<div id="summary">
+<h1>OperationalError at /subscriberregistry/configuration/</h1>
+<pre class="exception_value">(1049, "Unknown database 'subscriberregistry'")</pre>
+<table class="meta">
+<tr>
+<th>Request Method:</th>
+<td>GET</td>
+</tr>
+<tr>
+<th>Request URL:</th>
+<td>http://admin.openbts.com:8000/subscriberregistry/configuration/</td>
+</tr>
+<tr>
+<th>Django Version:</th>
+<td>1.3.7</td>
+</tr>
+<tr>
+<th>Exception Type:</th>
+<td>OperationalError</td>
+</tr>
+<tr>
+<th>Exception Value:</th>
+<td><pre>(1049, "Unknown database 'subscriberregistry'")</pre></td>
+</tr>
+<tr>
+<th>Exception Location:</th>
+<td>/usr/local/lib/python2.7/dist-packages/MySQLdb/connections.py in __init__, line 191</td>
+</tr>
+<tr>
+<th>Python Executable:</th>
+<td>/usr/bin/python</td>
+</tr>
+<tr>
+<th>Python Version:</th>
+<td>2.7.6</td>
+</tr>
+<tr>
+<th>Python Path:</th>
+<td><pre>['/opt/openbts-webui',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages']</pre></td>
+</tr>
+<tr>
+<th>Server time:</th>
+<td>Wed, 4 Jan 2017 20:17:43 -0300</td>
+</tr>
+</table>
+</div>
+<div id="traceback">
+<h2>Traceback <span class="commands"><a href="#" onclick="return switchPastebinFriendly(this);">Switch to copy-and-paste view</a></span></h2>
+<div id="browserTraceback">
+<ul class="traceback">
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py</code> in <code>get_response</code>
+<div class="context" id="c139734705456192">
+<ol class="pre-context" id="pre139734705456192" start="104"><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                    for middleware_method in self._view_middleware:</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                        response = middleware_method(request, callback, callback_args, callback_kwargs)</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                        if response:</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                            break</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre></pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                if response is None:</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                    try:</pre></li></ol>
+<ol class="context-line" start="111"><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                        response = callback(request, *callback_args, **callback_kwargs)</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705456192" start="112"><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                    except Exception, e:</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                        # If the view raised an exception, run it through exception</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                        # middleware, and if the exception middleware returns a</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                        # response, use that. Otherwise, reraise the exception.</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                        for middleware_method in self._exception_middleware:</pre></li><li onclick="toggle('pre139734705456192', 'post139734705456192')"><pre>                            response = middleware_method(request, e)</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705456192')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705456192">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exceptions</td>
+<td class="code"><pre>&lt;module 'django.core.exceptions' from '/usr/local/lib/python2.7/dist-packages/django/core/exceptions.pyc'&gt;</pre></td>
+</tr>
+<tr>
+<td>e</td>
+<td class="code"><pre>OperationalError(1049, "Unknown database 'subscriberregistry'")</pre></td>
+</tr>
+<tr>
+<td>callback_args</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>receivers</td>
+<td class="code"><pre>[(&lt;function _rollback_on_exception at 0x7f1686caab18&gt;, None)]</pre></td>
+</tr>
+<tr>
+<td>middleware_method</td>
+<td class="code"><pre>&lt;bound method MessageMiddleware.process_request of &lt;django.contrib.messages.middleware.MessageMiddleware object at 0x7f1686ace890&gt;&gt;</pre></td>
+</tr>
+<tr>
+<td>self</td>
+<td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f1686b36650&gt;</pre></td>
+</tr>
+<tr>
+<td>settings</td>
+<td class="code"><pre>&lt;django.conf.LazySettings object at 0x7f16883b5790&gt;</pre></td>
+</tr>
+<tr>
+<td>request</td>
+<td class="code"><pre>&lt;WSGIRequest
+GET:&lt;QueryDict: {}&gt;,
+POST:&lt;QueryDict: {}&gt;,
+COOKIES:{},
+META:{'CONTENT_LENGTH': '0',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'openbts-webui.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': '*/*',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate',
+ 'HTTP_HOST': 'admin.openbts.com:8000',
+ 'HTTP_USER_AGENT': 'Python/3.5 aiohttp/1.1.4',
+ 'LANG': 'es_AR.UTF-8',
+ 'LANGUAGE': 'es_AR:es',
+ 'LESSCLOSE': '/usr/bin/lesspipe %s %s',
+ 'LESSOPEN': '| /usr/bin/lesspipe %s',
+ 'LOGNAME': 'root',
+ 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:',
+ 'MAIL': '/var/mail/root',
+ 'OLDPWD': '/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games',
+ 'PATH_INFO': u'/subscriberregistry/configuration/',
+ 'PWD': '/opt/openbts-webui',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '192.168.100.166',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': '192.168.100.168',
+ 'SERVER_PORT': '8000',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SHLVL': '1',
+ 'SSH_CLIENT': '192.168.100.1 34521 22',
+ 'SSH_CONNECTION': '192.168.100.1 34521 192.168.100.168 22',
+ 'SSH_TTY': '/dev/pts/0',
+ 'TERM': 'xterm-256color',
+ 'TZ': 'America/Argentina/Buenos_Aires',
+ 'USER': 'root',
+ 'XDG_RUNTIME_DIR': '/run/user/0',
+ 'XDG_SESSION_ID': '17',
+ '_': '/usr/bin/python',
+ 'wsgi.errors': &lt;open file '&lt;stderr&gt;', mode 'w' at 0x7f168a6151e0&gt;,
+ 'wsgi.file_wrapper': &lt;class 'django.core.servers.basehttp.FileWrapper'&gt;,
+ 'wsgi.input': &lt;socket._fileobject object at 0x7f16857ebed0&gt;,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}&gt;</pre></td>
+</tr>
+<tr>
+<td>callback</td>
+<td class="code"><pre>&lt;function sbradvanced at 0x7f16857e0578&gt;</pre></td>
+</tr>
+<tr>
+<td>resolver</td>
+<td class="code"><pre>&lt;RegexURLResolver urls (None:None) ^/&gt;</pre></td>
+</tr>
+<tr>
+<td>urlresolvers</td>
+<td class="code"><pre>&lt;module 'django.core.urlresolvers' from '/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.pyc'&gt;</pre></td>
+</tr>
+<tr>
+<td>callback_kwargs</td>
+<td class="code"><pre>{}</pre></td>
+</tr>
+<tr>
+<td>response</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>urlconf</td>
+<td class="code"><pre>'urls'</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/opt/openbts-webui/webgui/views.py</code> in <code>sbradvanced</code>
+<div class="context" id="c139734705456408">
+<ol class="pre-context" id="pre139734705456408" start="525"><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>			NewParam=Parameter(keystring=param.keystring,valuestring=value,static=param.static,optional=param.optional,comments=param.comments)</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>			NewParam.save(using='subscriberregistry')</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>			</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>	table=Parameter.objects.using('subscriberregistry').all() </pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>	datalist=[]</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>	for prefix in settings.SBR_ADV_PREFIXES:</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>		tempparams=[]</pre></li></ol>
+<ol class="context-line" start="532"><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>		for row in table:</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705456408" start="533"><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>			if row.keystring.startswith(prefix): #find keystring in table by prefix</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>				tempparams.append(row) #append .parameter, .value, .comment to output list</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>		if len(tempparams)&gt;0:</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>			datalist.append(Section(prefix,tempparams))</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>	return render_to_response('sbr_advanced.html', {</pre></li><li onclick="toggle('pre139734705456408', 'post139734705456408')"><pre>		'mastername': "SubscriberRegistry",</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705456408')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705456408">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datalist</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>table</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>prefix</td>
+<td class="code"><pre>'Log'</pre></td>
+</tr>
+<tr>
+<td>request</td>
+<td class="code"><pre>&lt;WSGIRequest
+GET:&lt;QueryDict: {}&gt;,
+POST:&lt;QueryDict: {}&gt;,
+COOKIES:{},
+META:{'CONTENT_LENGTH': '0',
+ 'CONTENT_TYPE': 'text/plain',
+ 'DJANGO_SETTINGS_MODULE': 'openbts-webui.settings',
+ 'GATEWAY_INTERFACE': 'CGI/1.1',
+ 'HOME': '/root',
+ 'HTTP_ACCEPT': '*/*',
+ 'HTTP_ACCEPT_ENCODING': 'gzip, deflate',
+ 'HTTP_HOST': 'admin.openbts.com:8000',
+ 'HTTP_USER_AGENT': 'Python/3.5 aiohttp/1.1.4',
+ 'LANG': 'es_AR.UTF-8',
+ 'LANGUAGE': 'es_AR:es',
+ 'LESSCLOSE': '/usr/bin/lesspipe %s %s',
+ 'LESSOPEN': '| /usr/bin/lesspipe %s',
+ 'LOGNAME': 'root',
+ 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:',
+ 'MAIL': '/var/mail/root',
+ 'OLDPWD': '/root',
+ 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games',
+ 'PATH_INFO': u'/subscriberregistry/configuration/',
+ 'PWD': '/opt/openbts-webui',
+ 'QUERY_STRING': '',
+ 'REMOTE_ADDR': '192.168.100.166',
+ 'REMOTE_HOST': '',
+ 'REQUEST_METHOD': 'GET',
+ 'RUN_MAIN': 'true',
+ 'SCRIPT_NAME': u'',
+ 'SERVER_NAME': '192.168.100.168',
+ 'SERVER_PORT': '8000',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'SERVER_SOFTWARE': 'WSGIServer/0.1 Python/2.7.6',
+ 'SHELL': '/bin/bash',
+ 'SHLVL': '1',
+ 'SSH_CLIENT': '192.168.100.1 34521 22',
+ 'SSH_CONNECTION': '192.168.100.1 34521 192.168.100.168 22',
+ 'SSH_TTY': '/dev/pts/0',
+ 'TERM': 'xterm-256color',
+ 'TZ': 'America/Argentina/Buenos_Aires',
+ 'USER': 'root',
+ 'XDG_RUNTIME_DIR': '/run/user/0',
+ 'XDG_SESSION_ID': '17',
+ '_': '/usr/bin/python',
+ 'wsgi.errors': &lt;open file '&lt;stderr&gt;', mode 'w' at 0x7f168a6151e0&gt;,
+ 'wsgi.file_wrapper': &lt;class 'django.core.servers.basehttp.FileWrapper'&gt;,
+ 'wsgi.input': &lt;socket._fileobject object at 0x7f16857ebed0&gt;,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': True,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}&gt;</pre></td>
+</tr>
+<tr>
+<td>tempparams</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/db/models/query.py</code> in <code>_result_iter</code>
+<div class="context" id="c139734705368960">
+<ol class="pre-context" id="pre139734705368960" start="100"><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>            upper = len(self._result_cache)</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>            while pos &lt; upper:</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>                yield self._result_cache[pos]</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>                pos = pos + 1</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>            if not self._iter:</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>                raise StopIteration</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>            if len(self._result_cache) &lt;= pos:</pre></li></ol>
+<ol class="context-line" start="107"><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>                self._fill_cache()</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705368960" start="108"><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre></pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>    def __nonzero__(self):</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>        if self._result_cache is not None:</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>            return bool(self._result_cache)</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>        try:</pre></li><li onclick="toggle('pre139734705368960', 'post139734705368960')"><pre>            iter(self).next()</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705368960')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705368960">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>upper</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+<tr>
+<td>self</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>pos</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/db/models/query.py</code> in <code>_fill_cache</code>
+<div class="context" id="c139734705368096">
+<ol class="pre-context" id="pre139734705368096" start="765"><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>        """</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>        Fills the result cache with 'num' more entries (or until the results</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>        iterator is exhausted).</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>        """</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>        if self._iter:</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>            try:</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>                for i in range(num or ITER_CHUNK_SIZE):</pre></li></ol>
+<ol class="context-line" start="772"><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>                    self._result_cache.append(self._iter.next())</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705368096" start="773"><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>            except StopIteration:</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>                self._iter = None</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre></pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>    def _next_is_sticky(self):</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>        """</pre></li><li onclick="toggle('pre139734705368096', 'post139734705368096')"><pre>        Indicates that the next filter call and the one following that should</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705368096')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705368096">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+<tr>
+<td>self</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>num</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/db/models/query.py</code> in <code>iterator</code>
+<div class="context" id="c139734705367880">
+<ol class="pre-context" id="pre139734705367880" start="266"><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>                    init_list.append(field.attname)</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>            model_cls = deferred_class_factory(self.model, skip)</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre></pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>        # Cache db and model outside the loop</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>        db = self.db</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>        model = self.model</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>        compiler = self.query.get_compiler(using=db)</pre></li></ol>
+<ol class="context-line" start="273"><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>        for row in compiler.results_iter():</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705367880" start="274"><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>            if fill_cache:</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>                obj, _ = get_cached_row(model, row,</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>                            index_start, using=db, max_depth=max_depth,</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>                            requested=requested, offset=len(aggregate_select),</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>                            only_load=only_load)</pre></li><li onclick="toggle('pre139734705367880', 'post139734705367880')"><pre>            else:</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705367880')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705367880">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requested</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>fill_cache</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>aggregate_select</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>fields</td>
+<td class="code"><pre>[&lt;django.db.models.fields.CharField object at 0x7f1686b36750&gt;,
+ &lt;django.db.models.fields.CharField object at 0x7f1686b0d6d0&gt;,
+ &lt;django.db.models.fields.IntegerField object at 0x7f1686b0d750&gt;,
+ &lt;django.db.models.fields.IntegerField object at 0x7f1686b0d790&gt;,
+ &lt;django.db.models.fields.TextField object at 0x7f1686b0d7d0&gt;]</pre></td>
+</tr>
+<tr>
+<td>skip</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>self</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>load_fields</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>db</td>
+<td class="code"><pre>'subscriberregistry'</pre></td>
+</tr>
+<tr>
+<td>index_start</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+<tr>
+<td>extra_select</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>aggregate_start</td>
+<td class="code"><pre>5</pre></td>
+</tr>
+<tr>
+<td>pk_idx</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+<tr>
+<td>model</td>
+<td class="code"><pre>&lt;class 'webgui.models.Parameter'&gt;</pre></td>
+</tr>
+<tr>
+<td>only_load</td>
+<td class="code"><pre>{}</pre></td>
+</tr>
+<tr>
+<td>max_depth</td>
+<td class="code"><pre>5</pre></td>
+</tr>
+<tr>
+<td>compiler</td>
+<td class="code"><pre>&lt;django.db.backends.mysql.compiler.SQLCompiler object at 0x7f16857b5310&gt;</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py</code> in <code>results_iter</code>
+<div class="context" id="c139734705367664">
+<ol class="pre-context" id="pre139734705367664" start="673"><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>    def results_iter(self):</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>        """</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>        Returns an iterator over the results from executing this query.</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>        """</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>        resolve_columns = hasattr(self, 'resolve_columns')</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>        fields = None</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>        has_aggregate_select = bool(self.query.aggregate_select)</pre></li></ol>
+<ol class="context-line" start="680"><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>        for rows in self.execute_sql(MULTI):</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705367664" start="681"><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>            for row in rows:</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>                if resolve_columns:</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>                    if fields is None:</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>                        # We only set this up here because</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>                        # related_select_fields isn't populated until</pre></li><li onclick="toggle('pre139734705367664', 'post139734705367664')"><pre>                        # execute_sql() has been called.</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705367664')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705367664">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fields</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>self</td>
+<td class="code"><pre>&lt;django.db.backends.mysql.compiler.SQLCompiler object at 0x7f16857b5310&gt;</pre></td>
+</tr>
+<tr>
+<td>has_aggregate_select</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>resolve_columns</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py</code> in <code>execute_sql</code>
+<div class="context" id="c139734705366944">
+<ol class="pre-context" id="pre139734705366944" start="727"><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>                raise EmptyResultSet</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>        except EmptyResultSet:</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>            if result_type == MULTI:</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>                return empty_iter()</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>            else:</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>                return</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre></pre></li></ol>
+<ol class="context-line" start="734"><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>        cursor = self.connection.cursor()</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705366944" start="735"><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>        cursor.execute(sql, params)</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre></pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>        if not result_type:</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>            return cursor</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>        if result_type == SINGLE:</pre></li><li onclick="toggle('pre139734705366944', 'post139734705366944')"><pre>            if self.query.ordering_aliases:</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705366944')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705366944">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td class="code"><pre>&lt;django.db.backends.mysql.compiler.SQLCompiler object at 0x7f16857b5310&gt;</pre></td>
+</tr>
+<tr>
+<td>params</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>result_type</td>
+<td class="code"><pre>'multi'</pre></td>
+</tr>
+<tr>
+<td>sql</td>
+<td class="code"><pre>'SELECT `CONFIG`.`KEYSTRING`, `CONFIG`.`VALUESTRING`, `CONFIG`.`static`, `CONFIG`.`optional`, `CONFIG`.`COMMENTS` FROM `CONFIG`'</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/db/backends/__init__.py</code> in <code>cursor</code>
+<div class="context" id="c139734705368312">
+<ol class="pre-context" id="pre139734705368312" start="243"><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>        if self.connection is not None:</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>            self.connection.close()</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>            self.connection = None</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre></pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>    def cursor(self):</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>        if (self.use_debug_cursor or</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>            (self.use_debug_cursor is None and settings.DEBUG)):</pre></li></ol>
+<ol class="context-line" start="250"><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>            cursor = self.make_debug_cursor(self._cursor())</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705368312" start="251"><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>        else:</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>            cursor = util.CursorWrapper(self._cursor(), self)</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>        return cursor</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre></pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>    def make_debug_cursor(self, cursor):</pre></li><li onclick="toggle('pre139734705368312', 'post139734705368312')"><pre>        return util.CursorDebugWrapper(cursor, self)</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705368312')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705368312">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td class="code"><pre>&lt;django.db.backends.mysql.base.DatabaseWrapper object at 0x7f1686ac7b48&gt;</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/django/db/backends/mysql/base.py</code> in <code>_cursor</code>
+<div class="context" id="c139734705368888">
+<ol class="pre-context" id="pre139734705368888" start="315"><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>                kwargs['host'] = settings_dict['HOST']</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            if settings_dict['PORT']:</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>                kwargs['port'] = int(settings_dict['PORT'])</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            # We need the number of potentially affected rows after an</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            # "UPDATE", not the number of changed rows.</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            kwargs['client_flag'] = CLIENT.FOUND_ROWS</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            kwargs.update(settings_dict['OPTIONS'])</pre></li></ol>
+<ol class="context-line" start="322"><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            self.connection = Database.connect(**kwargs)</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705368888" start="323"><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            self.connection.encoders[SafeUnicode] = self.connection.encoders[unicode]</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            self.connection.encoders[SafeString] = self.connection.encoders[str]</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>            connection_created.send(sender=self.__class__, connection=self)</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>        cursor = CursorWrapper(self.connection.cursor())</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre>        return cursor</pre></li><li onclick="toggle('pre139734705368888', 'post139734705368888')"><pre></pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705368888')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705368888">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td class="code"><pre>&lt;django.db.backends.mysql.base.DatabaseWrapper object at 0x7f1686ac7b48&gt;</pre></td>
+</tr>
+<tr>
+<td>settings_dict</td>
+<td class="code"><pre>{'ENGINE': 'django.db.backends.mysql',
+ 'HOST': 'localhost',
+ 'NAME': 'subscriberregistry',
+ 'OPTIONS': {},
+ 'PASSWORD': '',
+ 'PORT': '3306',
+ 'TEST_CHARSET': None,
+ 'TEST_COLLATION': None,
+ 'TEST_MIRROR': None,
+ 'TEST_NAME': None,
+ 'TIME_ZONE': 'America/Argentina/Buenos_Aires',
+ 'USER': 'root'}</pre></td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td class="code"><pre>{'charset': 'utf8',
+ 'client_flag': 2,
+ 'conv': {0: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          1: &lt;type 'int'&gt;,
+          2: &lt;type 'int'&gt;,
+          3: &lt;type 'long'&gt;,
+          4: &lt;type 'float'&gt;,
+          5: &lt;type 'float'&gt;,
+          7: &lt;function mysql_timestamp_converter at 0x7f168744ae60&gt;,
+          8: &lt;type 'long'&gt;,
+          9: &lt;type 'int'&gt;,
+          10: &lt;function Date_or_None at 0x7f168744acf8&gt;,
+          11: &lt;function typecast_time at 0x7f1687432a28&gt;,
+          12: &lt;function DateTime_or_None at 0x7f168744ab90&gt;,
+          13: &lt;type 'int'&gt;,
+          15: [(128, &lt;type 'str'&gt;)],
+          246: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          248: &lt;function Str2Set at 0x7f168745d320&gt;,
+          249: [(128, &lt;type 'str'&gt;)],
+          250: [(128, &lt;type 'str'&gt;)],
+          251: [(128, &lt;type 'str'&gt;)],
+          252: [(128, &lt;type 'str'&gt;)],
+          253: [(128, &lt;type 'str'&gt;)],
+          254: [(128, &lt;type 'str'&gt;)],
+          &lt;type 'array.array'&gt;: &lt;function array2Str at 0x7f168745d6e0&gt;,
+          &lt;type 'set'&gt;: &lt;function Set2Str at 0x7f168745d398&gt;,
+          &lt;type 'bool'&gt;: &lt;function Bool2Str at 0x7f168745d2a8&gt;,
+          &lt;type 'NoneType'&gt;: &lt;function None2NULL at 0x7f168745d578&gt;,
+          &lt;type 'dict'&gt;: &lt;built-in function escape_dict&gt;,
+          &lt;type 'list'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'tuple'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'float'&gt;: &lt;function Float2Str at 0x7f168745d500&gt;,
+          &lt;type 'long'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'int'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'unicode'&gt;: &lt;function Unicode2Str at 0x7f168745d488&gt;,
+          &lt;type 'str'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.timedelta'&gt;: &lt;function DateTimeDelta2literal at 0x7f168744ade8&gt;,
+          &lt;type 'datetime.date'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.datetime'&gt;: &lt;function DateTime2literal at 0x7f168744ad70&gt;},
+ 'db': 'subscriberregistry',
+ 'host': 'localhost',
+ 'port': 3306,
+ 'use_unicode': True,
+ 'user': 'root'}</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/MySQLdb/__init__.py</code> in <code>Connect</code>
+<div class="context" id="c139734705366656">
+<ol class="pre-context" id="pre139734705366656" start="74"><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre></pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>def Binary(x):</pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>    return bytes(x)</pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre></pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>def Connect(*args, **kwargs):</pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>    """Factory function for connections.Connection."""</pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>    from MySQLdb.connections import Connection</pre></li></ol>
+<ol class="context-line" start="81"><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>    return Connection(*args, **kwargs)</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734705366656" start="82"><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre></pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>connect = Connection = Connect</pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre></pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>__all__ = [ 'BINARY', 'Binary', 'Connect', 'Connection', 'DATE',</pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>    'Date', 'Time', 'Timestamp', 'DateFromTicks', 'TimeFromTicks',</pre></li><li onclick="toggle('pre139734705366656', 'post139734705366656')"><pre>    'TimestampFromTicks', 'DataError', 'DatabaseError', 'Error',</pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734705366656')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734705366656">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connection</td>
+<td class="code"><pre>&lt;class 'MySQLdb.connections.Connection'&gt;</pre></td>
+</tr>
+<tr>
+<td>args</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td class="code"><pre>{'charset': 'utf8',
+ 'client_flag': 2,
+ 'conv': {0: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          1: &lt;type 'int'&gt;,
+          2: &lt;type 'int'&gt;,
+          3: &lt;type 'long'&gt;,
+          4: &lt;type 'float'&gt;,
+          5: &lt;type 'float'&gt;,
+          7: &lt;function mysql_timestamp_converter at 0x7f168744ae60&gt;,
+          8: &lt;type 'long'&gt;,
+          9: &lt;type 'int'&gt;,
+          10: &lt;function Date_or_None at 0x7f168744acf8&gt;,
+          11: &lt;function typecast_time at 0x7f1687432a28&gt;,
+          12: &lt;function DateTime_or_None at 0x7f168744ab90&gt;,
+          13: &lt;type 'int'&gt;,
+          15: [(128, &lt;type 'str'&gt;)],
+          246: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          248: &lt;function Str2Set at 0x7f168745d320&gt;,
+          249: [(128, &lt;type 'str'&gt;)],
+          250: [(128, &lt;type 'str'&gt;)],
+          251: [(128, &lt;type 'str'&gt;)],
+          252: [(128, &lt;type 'str'&gt;)],
+          253: [(128, &lt;type 'str'&gt;)],
+          254: [(128, &lt;type 'str'&gt;)],
+          &lt;type 'array.array'&gt;: &lt;function array2Str at 0x7f168745d6e0&gt;,
+          &lt;type 'set'&gt;: &lt;function Set2Str at 0x7f168745d398&gt;,
+          &lt;type 'bool'&gt;: &lt;function Bool2Str at 0x7f168745d2a8&gt;,
+          &lt;type 'NoneType'&gt;: &lt;function None2NULL at 0x7f168745d578&gt;,
+          &lt;type 'dict'&gt;: &lt;built-in function escape_dict&gt;,
+          &lt;type 'list'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'tuple'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'float'&gt;: &lt;function Float2Str at 0x7f168745d500&gt;,
+          &lt;type 'long'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'int'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'unicode'&gt;: &lt;function Unicode2Str at 0x7f168745d488&gt;,
+          &lt;type 'str'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.timedelta'&gt;: &lt;function DateTimeDelta2literal at 0x7f168744ade8&gt;,
+          &lt;type 'datetime.date'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.datetime'&gt;: &lt;function DateTime2literal at 0x7f168744ad70&gt;},
+ 'db': 'subscriberregistry',
+ 'host': 'localhost',
+ 'port': 3306,
+ 'use_unicode': True,
+ 'user': 'root'}</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="frame">
+<code>/usr/local/lib/python2.7/dist-packages/MySQLdb/connections.py</code> in <code>__init__</code>
+<div class="context" id="c139734725320784">
+<ol class="pre-context" id="pre139734725320784" start="184"><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre></pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        kwargs2['client_flag'] = client_flag</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre></pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        # PEP-249 requires autocommit to be initially off</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        autocommit = kwargs2.pop('autocommit', False)</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        self.waiter = kwargs2.pop('waiter', None)</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre></pre></li></ol>
+<ol class="context-line" start="191"><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        super(Connection, self).__init__(*args, **kwargs2)</pre> <span>...</span></li></ol>
+<ol class="post-context" id="post139734725320784" start="192"><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        self.cursorclass = cursorclass</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        self.encoders = dict([ (k, v) for k, v in conv.items()</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>                               if type(k) is not int ])</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre></pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre>        self._server_version = tuple([ numeric_part(n) for n in self.get_server_info().split('.')[:2] ])</pre></li><li onclick="toggle('pre139734725320784', 'post139734725320784')"><pre></pre></li></ol>
+</div>
+<div class="commands">
+<a href="#" onclick="return varToggle(this, '139734725320784')"><span>▶</span> Local vars</a>
+</div>
+<table class="vars" id="v139734725320784">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autocommit</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>kwargs2</td>
+<td class="code"><pre>{'client_flag': 196610,
+ 'conv': {0: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          1: &lt;type 'int'&gt;,
+          2: &lt;type 'int'&gt;,
+          3: &lt;type 'long'&gt;,
+          4: &lt;type 'float'&gt;,
+          5: &lt;type 'float'&gt;,
+          7: &lt;function mysql_timestamp_converter at 0x7f168744ae60&gt;,
+          8: &lt;type 'long'&gt;,
+          9: &lt;type 'int'&gt;,
+          10: &lt;function Date_or_None at 0x7f168744acf8&gt;,
+          11: &lt;function typecast_time at 0x7f1687432a28&gt;,
+          12: &lt;function DateTime_or_None at 0x7f168744ab90&gt;,
+          13: &lt;type 'int'&gt;,
+          15: [(128, &lt;type 'str'&gt;)],
+          246: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          248: &lt;function Str2Set at 0x7f168745d320&gt;,
+          249: [(128, &lt;type 'str'&gt;)],
+          250: [(128, &lt;type 'str'&gt;)],
+          251: [(128, &lt;type 'str'&gt;)],
+          252: [(128, &lt;type 'str'&gt;)],
+          253: [(128, &lt;type 'str'&gt;)],
+          254: [(128, &lt;type 'str'&gt;)],
+          &lt;type 'array.array'&gt;: &lt;function array2Str at 0x7f168745d6e0&gt;,
+          &lt;type 'set'&gt;: &lt;function Set2Str at 0x7f168745d398&gt;,
+          &lt;type 'bool'&gt;: &lt;function Bool2Str at 0x7f168745d2a8&gt;,
+          &lt;type 'NoneType'&gt;: &lt;function None2NULL at 0x7f168745d578&gt;,
+          &lt;type 'dict'&gt;: &lt;built-in function escape_dict&gt;,
+          &lt;type 'list'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'tuple'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'float'&gt;: &lt;function Float2Str at 0x7f168745d500&gt;,
+          &lt;type 'long'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'int'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'unicode'&gt;: &lt;function Unicode2Str at 0x7f168745d488&gt;,
+          &lt;type 'str'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.timedelta'&gt;: &lt;function DateTimeDelta2literal at 0x7f168744ade8&gt;,
+          &lt;type 'datetime.date'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.datetime'&gt;: &lt;function DateTime2literal at 0x7f168744ad70&gt;},
+ 'db': 'subscriberregistry',
+ 'host': 'localhost',
+ 'port': 3306,
+ 'user': 'root'}</pre></td>
+</tr>
+<tr>
+<td>args</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>conv</td>
+<td class="code"><pre>{0: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+ 1: &lt;type 'int'&gt;,
+ 2: &lt;type 'int'&gt;,
+ 3: &lt;type 'long'&gt;,
+ 4: &lt;type 'float'&gt;,
+ 5: &lt;type 'float'&gt;,
+ 7: &lt;function mysql_timestamp_converter at 0x7f168744ae60&gt;,
+ 8: &lt;type 'long'&gt;,
+ 9: &lt;type 'int'&gt;,
+ 10: &lt;function Date_or_None at 0x7f168744acf8&gt;,
+ 11: &lt;function typecast_time at 0x7f1687432a28&gt;,
+ 12: &lt;function DateTime_or_None at 0x7f168744ab90&gt;,
+ 13: &lt;type 'int'&gt;,
+ 15: [(128, &lt;type 'str'&gt;)],
+ 246: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+ 248: &lt;function Str2Set at 0x7f168745d320&gt;,
+ 249: [(128, &lt;type 'str'&gt;)],
+ 250: [(128, &lt;type 'str'&gt;)],
+ 251: [(128, &lt;type 'str'&gt;)],
+ 252: [(128, &lt;type 'str'&gt;)],
+ 253: [(128, &lt;type 'str'&gt;)],
+ 254: [(128, &lt;type 'str'&gt;)],
+ &lt;type 'array.array'&gt;: &lt;function array2Str at 0x7f168745d6e0&gt;,
+ &lt;type 'set'&gt;: &lt;function Set2Str at 0x7f168745d398&gt;,
+ &lt;type 'bool'&gt;: &lt;function Bool2Str at 0x7f168745d2a8&gt;,
+ &lt;type 'NoneType'&gt;: &lt;function None2NULL at 0x7f168745d578&gt;,
+ &lt;type 'dict'&gt;: &lt;built-in function escape_dict&gt;,
+ &lt;type 'list'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+ &lt;type 'tuple'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+ &lt;type 'float'&gt;: &lt;function Float2Str at 0x7f168745d500&gt;,
+ &lt;type 'long'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+ &lt;type 'int'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+ &lt;type 'unicode'&gt;: &lt;function Unicode2Str at 0x7f168745d488&gt;,
+ &lt;type 'str'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+ &lt;type 'datetime.timedelta'&gt;: &lt;function DateTimeDelta2literal at 0x7f168744ade8&gt;,
+ &lt;type 'datetime.date'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+ &lt;type 'datetime.datetime'&gt;: &lt;function DateTime2literal at 0x7f168744ad70&gt;}</pre></td>
+</tr>
+<tr>
+<td>use_unicode</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+<tr>
+<td>FIELD_TYPE</td>
+<td class="code"><pre>&lt;module 'MySQLdb.constants.FIELD_TYPE' from '/usr/local/lib/python2.7/dist-packages/MySQLdb/constants/FIELD_TYPE.pyc'&gt;</pre></td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td class="code"><pre>{'charset': 'utf8',
+ 'client_flag': 2,
+ 'conv': {0: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          1: &lt;type 'int'&gt;,
+          2: &lt;type 'int'&gt;,
+          3: &lt;type 'long'&gt;,
+          4: &lt;type 'float'&gt;,
+          5: &lt;type 'float'&gt;,
+          7: &lt;function mysql_timestamp_converter at 0x7f168744ae60&gt;,
+          8: &lt;type 'long'&gt;,
+          9: &lt;type 'int'&gt;,
+          10: &lt;function Date_or_None at 0x7f168744acf8&gt;,
+          11: &lt;function typecast_time at 0x7f1687432a28&gt;,
+          12: &lt;function DateTime_or_None at 0x7f168744ab90&gt;,
+          13: &lt;type 'int'&gt;,
+          15: [(128, &lt;type 'str'&gt;)],
+          246: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+          248: &lt;function Str2Set at 0x7f168745d320&gt;,
+          249: [(128, &lt;type 'str'&gt;)],
+          250: [(128, &lt;type 'str'&gt;)],
+          251: [(128, &lt;type 'str'&gt;)],
+          252: [(128, &lt;type 'str'&gt;)],
+          253: [(128, &lt;type 'str'&gt;)],
+          254: [(128, &lt;type 'str'&gt;)],
+          &lt;type 'array.array'&gt;: &lt;function array2Str at 0x7f168745d6e0&gt;,
+          &lt;type 'set'&gt;: &lt;function Set2Str at 0x7f168745d398&gt;,
+          &lt;type 'bool'&gt;: &lt;function Bool2Str at 0x7f168745d2a8&gt;,
+          &lt;type 'NoneType'&gt;: &lt;function None2NULL at 0x7f168745d578&gt;,
+          &lt;type 'dict'&gt;: &lt;built-in function escape_dict&gt;,
+          &lt;type 'list'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'tuple'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+          &lt;type 'float'&gt;: &lt;function Float2Str at 0x7f168745d500&gt;,
+          &lt;type 'long'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'int'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+          &lt;type 'unicode'&gt;: &lt;function Unicode2Str at 0x7f168745d488&gt;,
+          &lt;type 'str'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.timedelta'&gt;: &lt;function DateTimeDelta2literal at 0x7f168744ade8&gt;,
+          &lt;type 'datetime.date'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+          &lt;type 'datetime.datetime'&gt;: &lt;function DateTime2literal at 0x7f168744ad70&gt;},
+ 'db': 'subscriberregistry',
+ 'host': 'localhost',
+ 'port': 3306,
+ 'use_unicode': True,
+ 'user': 'root'}</pre></td>
+</tr>
+<tr>
+<td>sql_mode</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>charset</td>
+<td class="code"><pre>'utf8'</pre></td>
+</tr>
+<tr>
+<td>n</td>
+<td class="code"><pre>'5'</pre></td>
+</tr>
+<tr>
+<td>self</td>
+<td class="code"><pre>&lt;_mysql.connection closed at 7f168018ec90&gt;</pre></td>
+</tr>
+<tr>
+<td>conv2</td>
+<td class="code"><pre>{0: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+ 1: &lt;type 'int'&gt;,
+ 2: &lt;type 'int'&gt;,
+ 3: &lt;type 'long'&gt;,
+ 4: &lt;type 'float'&gt;,
+ 5: &lt;type 'float'&gt;,
+ 7: &lt;function mysql_timestamp_converter at 0x7f168744ae60&gt;,
+ 8: &lt;type 'long'&gt;,
+ 9: &lt;type 'int'&gt;,
+ 10: &lt;function Date_or_None at 0x7f168744acf8&gt;,
+ 11: &lt;function typecast_time at 0x7f1687432a28&gt;,
+ 12: &lt;function DateTime_or_None at 0x7f168744ab90&gt;,
+ 13: &lt;type 'int'&gt;,
+ 15: [(128, &lt;type 'str'&gt;)],
+ 246: &lt;function typecast_decimal at 0x7f1687432b90&gt;,
+ 248: &lt;function Str2Set at 0x7f168745d320&gt;,
+ 249: [(128, &lt;type 'str'&gt;)],
+ 250: [(128, &lt;type 'str'&gt;)],
+ 251: [(128, &lt;type 'str'&gt;)],
+ 252: [(128, &lt;type 'str'&gt;)],
+ 253: [(128, &lt;type 'str'&gt;)],
+ 254: [(128, &lt;type 'str'&gt;)],
+ &lt;type 'array.array'&gt;: &lt;function array2Str at 0x7f168745d6e0&gt;,
+ &lt;type 'set'&gt;: &lt;function Set2Str at 0x7f168745d398&gt;,
+ &lt;type 'bool'&gt;: &lt;function Bool2Str at 0x7f168745d2a8&gt;,
+ &lt;type 'NoneType'&gt;: &lt;function None2NULL at 0x7f168745d578&gt;,
+ &lt;type 'dict'&gt;: &lt;built-in function escape_dict&gt;,
+ &lt;type 'list'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+ &lt;type 'tuple'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+ &lt;type 'float'&gt;: &lt;function Float2Str at 0x7f168745d500&gt;,
+ &lt;type 'long'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+ &lt;type 'int'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+ &lt;type 'unicode'&gt;: &lt;function Unicode2Str at 0x7f168745d488&gt;,
+ &lt;type 'str'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+ &lt;type 'datetime.timedelta'&gt;: &lt;function DateTimeDelta2literal at 0x7f168744ade8&gt;,
+ &lt;type 'datetime.date'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+ &lt;type 'datetime.datetime'&gt;: &lt;function DateTime2literal at 0x7f168744ad70&gt;}</pre></td>
+</tr>
+<tr>
+<td>conversions</td>
+<td class="code"><pre>{0: &lt;class 'decimal.Decimal'&gt;,
+ 1: &lt;type 'int'&gt;,
+ 2: &lt;type 'int'&gt;,
+ 3: &lt;type 'long'&gt;,
+ 4: &lt;type 'float'&gt;,
+ 5: &lt;type 'float'&gt;,
+ 7: &lt;function mysql_timestamp_converter at 0x7f168744ae60&gt;,
+ 8: &lt;type 'long'&gt;,
+ 9: &lt;type 'int'&gt;,
+ 10: &lt;function Date_or_None at 0x7f168744acf8&gt;,
+ 11: &lt;function TimeDelta_or_None at 0x7f168744ac08&gt;,
+ 12: &lt;function DateTime_or_None at 0x7f168744ab90&gt;,
+ 13: &lt;type 'int'&gt;,
+ 15: [(128, &lt;type 'str'&gt;)],
+ 246: &lt;class 'decimal.Decimal'&gt;,
+ 248: &lt;function Str2Set at 0x7f168745d320&gt;,
+ 249: [(128, &lt;type 'str'&gt;)],
+ 250: [(128, &lt;type 'str'&gt;)],
+ 251: [(128, &lt;type 'str'&gt;)],
+ 252: [(128, &lt;type 'str'&gt;)],
+ 253: [(128, &lt;type 'str'&gt;)],
+ 254: [(128, &lt;type 'str'&gt;)],
+ &lt;type 'array.array'&gt;: &lt;function array2Str at 0x7f168745d6e0&gt;,
+ &lt;type 'set'&gt;: &lt;function Set2Str at 0x7f168745d398&gt;,
+ &lt;type 'bool'&gt;: &lt;function Bool2Str at 0x7f168745d2a8&gt;,
+ &lt;type 'NoneType'&gt;: &lt;function None2NULL at 0x7f168745d578&gt;,
+ &lt;type 'dict'&gt;: &lt;built-in function escape_dict&gt;,
+ &lt;type 'list'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+ &lt;type 'tuple'&gt;: &lt;function quote_tuple at 0x7f168745d758&gt;,
+ &lt;type 'float'&gt;: &lt;function Float2Str at 0x7f168745d500&gt;,
+ &lt;type 'long'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+ &lt;type 'int'&gt;: &lt;function Thing2Str at 0x7f168745d410&gt;,
+ &lt;type 'unicode'&gt;: &lt;function Unicode2Str at 0x7f168745d488&gt;,
+ &lt;type 'str'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+ &lt;type 'datetime.timedelta'&gt;: &lt;function DateTimeDelta2literal at 0x7f168744ade8&gt;,
+ &lt;type 'datetime.date'&gt;: &lt;function Thing2Literal at 0x7f168745d5f0&gt;,
+ &lt;type 'datetime.datetime'&gt;: &lt;function DateTime2literal at 0x7f168744ad70&gt;}</pre></td>
+</tr>
+<tr>
+<td>CLIENT</td>
+<td class="code"><pre>&lt;module 'MySQLdb.constants.CLIENT' from '/usr/local/lib/python2.7/dist-packages/MySQLdb/constants/CLIENT.pyc'&gt;</pre></td>
+</tr>
+<tr>
+<td>proxy</td>
+<td class="code"><pre>&lt;built-in function proxy&gt;</pre></td>
+</tr>
+<tr>
+<td>cursorclass</td>
+<td class="code"><pre>&lt;class 'MySQLdb.cursors.Cursor'&gt;</pre></td>
+</tr>
+<tr>
+<td>v</td>
+<td class="code"><pre>[(128, &lt;type 'str'&gt;)]</pre></td>
+</tr>
+<tr>
+<td>k</td>
+<td class="code"><pre>254</pre></td>
+</tr>
+<tr>
+<td>client_version</td>
+<td class="code"><pre>(5, 5)</pre></td>
+</tr>
+<tr>
+<td>client_flag</td>
+<td class="code"><pre>196610</pre></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<form action="http://dpaste.com/" id="pasteform" method="post" name="pasteform">
+<div class="pastebin" id="pastebinTraceback">
+<input name="language" type="hidden" value="PythonConsole">
+<input name="title" type="hidden" value="OperationalError at /subscriberregistry/configuration/">
+<input name="source" type="hidden" value="Django Dpaste Agent">
+<input name="poster" type="hidden" value="Django">
+<textarea cols="140" id="traceback_area" name="content" rows="25">
+Environment:
+
+
+Request Method: GET
+Request URL: http://admin.openbts.com:8000/subscriberregistry/configuration/
+
+Django Version: 1.3.7
+Python Version: 2.7.6
+Installed Applications:
+['django.contrib.auth',
+ 'django.contrib.contenttypes',
+ 'django.contrib.sessions',
+ 'django.contrib.sites',
+ 'django.contrib.messages',
+ 'django.contrib.staticfiles',
+ 'webgui']
+Installed Middleware:
+('django.middleware.common.CommonMiddleware',
+ 'django.contrib.sessions.middleware.SessionMiddleware',
+ 'django.contrib.auth.middleware.AuthenticationMiddleware',
+ 'django.contrib.messages.middleware.MessageMiddleware')
+
+
+Traceback:
+File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py" in get_response
+  111.                         response = callback(request, *callback_args, **callback_kwargs)
+File "/opt/openbts-webui/webgui/views.py" in sbradvanced
+  532. 		for row in table:
+File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py" in _result_iter
+  107.                 self._fill_cache()
+File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py" in _fill_cache
+  772.                     self._result_cache.append(self._iter.next())
+File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py" in iterator
+  273.         for row in compiler.results_iter():
+File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py" in results_iter
+  680.         for rows in self.execute_sql(MULTI):
+File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py" in execute_sql
+  734.         cursor = self.connection.cursor()
+File "/usr/local/lib/python2.7/dist-packages/django/db/backends/__init__.py" in cursor
+  250.             cursor = self.make_debug_cursor(self._cursor())
+File "/usr/local/lib/python2.7/dist-packages/django/db/backends/mysql/base.py" in _cursor
+  322.             self.connection = Database.connect(**kwargs)
+File "/usr/local/lib/python2.7/dist-packages/MySQLdb/__init__.py" in Connect
+  81.     return Connection(*args, **kwargs)
+File "/usr/local/lib/python2.7/dist-packages/MySQLdb/connections.py" in __init__
+  191.         super(Connection, self).__init__(*args, **kwargs2)
+
+Exception Type: OperationalError at /subscriberregistry/configuration/
+Exception Value: (1049, "Unknown database 'subscriberregistry'")
+</textarea>
+<br><br>
+<input type="submit" value="Share this traceback on a public Web site">
+</input></br></br></input></input></input></input></div>
+</form>
+</div>
+<div id="requestinfo">
+<h2>Request information</h2>
+<h3 id="get-info">GET</h3>
+<p>No GET data</p>
+<h3 id="post-info">POST</h3>
+<p>No POST data</p>
+<h3 id="files-info">FILES</h3>
+<p>No FILES data</p>
+<h3 id="cookie-info">COOKIES</h3>
+<p>No cookie data</p>
+<h3 id="meta-info">META</h3>
+<table class="req">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RUN_MAIN</td>
+<td class="code"><pre>'true'</pre></td>
+</tr>
+<tr>
+<td>SERVER_SOFTWARE</td>
+<td class="code"><pre>'WSGIServer/0.1 Python/2.7.6'</pre></td>
+</tr>
+<tr>
+<td>SCRIPT_NAME</td>
+<td class="code"><pre>u''</pre></td>
+</tr>
+<tr>
+<td>REQUEST_METHOD</td>
+<td class="code"><pre>'GET'</pre></td>
+</tr>
+<tr>
+<td>SERVER_PROTOCOL</td>
+<td class="code"><pre>'HTTP/1.1'</pre></td>
+</tr>
+<tr>
+<td>HOME</td>
+<td class="code"><pre>'/root'</pre></td>
+</tr>
+<tr>
+<td>LANG</td>
+<td class="code"><pre>'es_AR.UTF-8'</pre></td>
+</tr>
+<tr>
+<td>SHELL</td>
+<td class="code"><pre>'/bin/bash'</pre></td>
+</tr>
+<tr>
+<td>SERVER_PORT</td>
+<td class="code"><pre>'8000'</pre></td>
+</tr>
+<tr>
+<td>XDG_RUNTIME_DIR</td>
+<td class="code"><pre>'/run/user/0'</pre></td>
+</tr>
+<tr>
+<td>HTTP_HOST</td>
+<td class="code"><pre>'admin.openbts.com:8000'</pre></td>
+</tr>
+<tr>
+<td>wsgi.version</td>
+<td class="code"><pre>(1, 0)</pre></td>
+</tr>
+<tr>
+<td>XDG_SESSION_ID</td>
+<td class="code"><pre>'17'</pre></td>
+</tr>
+<tr>
+<td>HTTP_ACCEPT</td>
+<td class="code"><pre>'*/*'</pre></td>
+</tr>
+<tr>
+<td>LESSCLOSE</td>
+<td class="code"><pre>'/usr/bin/lesspipe %s %s'</pre></td>
+</tr>
+<tr>
+<td>wsgi.run_once</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>SSH_TTY</td>
+<td class="code"><pre>'/dev/pts/0'</pre></td>
+</tr>
+<tr>
+<td>wsgi.errors</td>
+<td class="code"><pre>&lt;open file '&lt;stderr&gt;', mode 'w' at 0x7f168a6151e0&gt;</pre></td>
+</tr>
+<tr>
+<td>wsgi.multiprocess</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>MAIL</td>
+<td class="code"><pre>'/var/mail/root'</pre></td>
+</tr>
+<tr>
+<td>SSH_CONNECTION</td>
+<td class="code"><pre>'192.168.100.1 34521 192.168.100.168 22'</pre></td>
+</tr>
+<tr>
+<td>PATH_INFO</td>
+<td class="code"><pre>u'/subscriberregistry/configuration/'</pre></td>
+</tr>
+<tr>
+<td>LESSOPEN</td>
+<td class="code"><pre>'| /usr/bin/lesspipe %s'</pre></td>
+</tr>
+<tr>
+<td>SSH_CLIENT</td>
+<td class="code"><pre>'192.168.100.1 34521 22'</pre></td>
+</tr>
+<tr>
+<td>LOGNAME</td>
+<td class="code"><pre>'root'</pre></td>
+</tr>
+<tr>
+<td>USER</td>
+<td class="code"><pre>'root'</pre></td>
+</tr>
+<tr>
+<td>QUERY_STRING</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>PATH</td>
+<td class="code"><pre>'/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'</pre></td>
+</tr>
+<tr>
+<td>TERM</td>
+<td class="code"><pre>'xterm-256color'</pre></td>
+</tr>
+<tr>
+<td>HTTP_USER_AGENT</td>
+<td class="code"><pre>'Python/3.5 aiohttp/1.1.4'</pre></td>
+</tr>
+<tr>
+<td>TZ</td>
+<td class="code"><pre>'America/Argentina/Buenos_Aires'</pre></td>
+</tr>
+<tr>
+<td>LANGUAGE</td>
+<td class="code"><pre>'es_AR:es'</pre></td>
+</tr>
+<tr>
+<td>REMOTE_ADDR</td>
+<td class="code"><pre>'192.168.100.166'</pre></td>
+</tr>
+<tr>
+<td>SHLVL</td>
+<td class="code"><pre>'1'</pre></td>
+</tr>
+<tr>
+<td>wsgi.url_scheme</td>
+<td class="code"><pre>'http'</pre></td>
+</tr>
+<tr>
+<td>CONTENT_LENGTH</td>
+<td class="code"><pre>'0'</pre></td>
+</tr>
+<tr>
+<td>wsgi.input</td>
+<td class="code"><pre>&lt;socket._fileobject object at 0x7f16857ebed0&gt;</pre></td>
+</tr>
+<tr>
+<td>wsgi.multithread</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+<tr>
+<td>_</td>
+<td class="code"><pre>'/usr/bin/python'</pre></td>
+</tr>
+<tr>
+<td>LS_COLORS</td>
+<td class="code"><pre>'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'</pre></td>
+</tr>
+<tr>
+<td>SERVER_NAME</td>
+<td class="code"><pre>'192.168.100.168'</pre></td>
+</tr>
+<tr>
+<td>GATEWAY_INTERFACE</td>
+<td class="code"><pre>'CGI/1.1'</pre></td>
+</tr>
+<tr>
+<td>OLDPWD</td>
+<td class="code"><pre>'/root'</pre></td>
+</tr>
+<tr>
+<td>PWD</td>
+<td class="code"><pre>'/opt/openbts-webui'</pre></td>
+</tr>
+<tr>
+<td>DJANGO_SETTINGS_MODULE</td>
+<td class="code"><pre>'openbts-webui.settings'</pre></td>
+</tr>
+<tr>
+<td>CONTENT_TYPE</td>
+<td class="code"><pre>'text/plain'</pre></td>
+</tr>
+<tr>
+<td>wsgi.file_wrapper</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>REMOTE_HOST</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>HTTP_ACCEPT_ENCODING</td>
+<td class="code"><pre>'gzip, deflate'</pre></td>
+</tr>
+</tbody>
+</table>
+<h3 id="settings-info">Settings</h3>
+<h4>Using settings module <code>openbts-webui.settings</code></h4>
+<table class="req">
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAIN_SECTIONS</td>
+<td class="code"><pre>[('GSM Radio',
+  ['GSM.Radio.Band', 'GSM.Radio.C0'],
+  ['GSM operating band', 'ARFCN']),
+ ('GSM Identity',
+  ['GSM.Identity.MCC',
+   'GSM.Identity.MNC',
+   'GSM.Identity.ShortName',
+   'GSM.Identity.LAC'],
+  ['Mobile country code',
+   'Mobile network code',
+   'Short name',
+   'Location Area Code']),
+ ('SIP',
+  ['SIP.Local.IP',
+   'SIP.Local.Port',
+   'SIP.Proxy.Registration',
+   'SIP.Proxy.SMS',
+   'SIP.Proxy.Speech',
+   'SIP.myPort'],
+  ['OpenBTS IP address',
+   'SIP interface IP port',
+   'Registration and authentication proxy IP host and port',
+   'Text messaging proxy IP host and port',
+   'Speech calls proxy IP host and port',
+   'SIP Authentication Server Port']),
+ ('Open Registration',
+  ['Control.LUR.OpenRegistration'],
+  ['Open Registration']),
+ ('Logging', ['Log.Level'], ['Log level'])]</pre></td>
+</tr>
+<tr>
+<td>USE_L10N</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+<tr>
+<td>USE_THOUSAND_SEPARATOR</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>LANGUAGE_CODE</td>
+<td class="code"><pre>'en-us'</pre></td>
+</tr>
+<tr>
+<td>ROOT_URLCONF</td>
+<td class="code"><pre>'urls'</pre></td>
+</tr>
+<tr>
+<td>MANAGERS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>DEFAULT_CHARSET</td>
+<td class="code"><pre>'utf-8'</pre></td>
+</tr>
+<tr>
+<td>STATIC_ROOT</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>TEST_DATABASE_CHARSET</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>ALLOWED_HOSTS</td>
+<td class="code"><pre>['*']</pre></td>
+</tr>
+<tr>
+<td>MESSAGE_STORAGE</td>
+<td class="code"><pre>'django.contrib.messages.storage.user_messages.LegacyFallbackStorage'</pre></td>
+</tr>
+<tr>
+<td>DATABASE_HOST</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>EMAIL_SUBJECT_PREFIX</td>
+<td class="code"><pre>'[Django] '</pre></td>
+</tr>
+<tr>
+<td>SEND_BROKEN_LINK_EMAILS</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>URL_VALIDATOR_USER_AGENT</td>
+<td class="code"><pre>'Django/1.3.7 (http://www.djangoproject.com)'</pre></td>
+</tr>
+<tr>
+<td>STATICFILES_FINDERS</td>
+<td class="code"><pre>('django.contrib.staticfiles.finders.FileSystemFinder',
+ 'django.contrib.staticfiles.finders.AppDirectoriesFinder')</pre></td>
+</tr>
+<tr>
+<td>SUBSCRIBERREGISTRY_PATH</td>
+<td class="code"><pre>'/home/digiman/subscriberRegistry'</pre></td>
+</tr>
+<tr>
+<td>SESSION_COOKIE_DOMAIN</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>SESSION_COOKIE_NAME</td>
+<td class="code"><pre>'sessionid'</pre></td>
+</tr>
+<tr>
+<td>ADMIN_FOR</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>TIME_INPUT_FORMATS</td>
+<td class="code"><pre>('%H:%M:%S', '%H:%M')</pre></td>
+</tr>
+<tr>
+<td>DATABASES</td>
+<td class="code"><pre>{'asterisk': {'ENGINE': 'django.db.backends.mysql',
+              'HOST': 'localhost',
+              'NAME': 'asterisk',
+              'OPTIONS': {},
+              'PASSWORD': '********************',
+              'PORT': '3306',
+              'TEST_CHARSET': None,
+              'TEST_COLLATION': None,
+              'TEST_MIRROR': None,
+              'TEST_NAME': None,
+              'TIME_ZONE': 'America/Argentina/Buenos_Aires',
+              'USER': 'root'},
+ 'default': {'ENGINE': 'django.db.backends.mysql',
+             'HOST': 'localhost',
+             'NAME': 'openbts',
+             'OPTIONS': {},
+             'PASSWORD': '********************',
+             'PORT': '3306',
+             'TEST_CHARSET': None,
+             'TEST_COLLATION': None,
+             'TEST_MIRROR': None,
+             'TEST_NAME': None,
+             'TIME_ZONE': 'America/Argentina/Buenos_Aires',
+             'USER': 'root'},
+ 'smqueue': {'ENGINE': 'django.db.backends.mysql',
+             'HOST': 'localhost',
+             'NAME': 'smqueue',
+             'OPTIONS': {},
+             'PASSWORD': '********************',
+             'PORT': '3306',
+             'TEST_CHARSET': None,
+             'TEST_COLLATION': None,
+             'TEST_MIRROR': None,
+             'TEST_NAME': None,
+             'TIME_ZONE': 'America/Argentina/Buenos_Aires',
+             'USER': 'root'},
+ 'subscriberregistry': {'ENGINE': 'django.db.backends.mysql',
+                        'HOST': 'localhost',
+                        'NAME': 'subscriberregistry',
+                        'OPTIONS': {},
+                        'PASSWORD': '********************',
+                        'PORT': '3306',
+                        'TEST_CHARSET': None,
+                        'TEST_COLLATION': None,
+                        'TEST_MIRROR': None,
+                        'TEST_NAME': None,
+                        'TIME_ZONE': 'America/Argentina/Buenos_Aires',
+                        'USER': 'root'}}</pre></td>
+</tr>
+<tr>
+<td>TEST_DATABASE_NAME</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>FILE_UPLOAD_PERMISSIONS</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>FILE_UPLOAD_HANDLERS</td>
+<td class="code"><pre>('django.core.files.uploadhandler.MemoryFileUploadHandler',
+ 'django.core.files.uploadhandler.TemporaryFileUploadHandler')</pre></td>
+</tr>
+<tr>
+<td>DEFAULT_CONTENT_TYPE</td>
+<td class="code"><pre>'text/html'</pre></td>
+</tr>
+<tr>
+<td>APPEND_SLASH</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+<tr>
+<td>FIRST_DAY_OF_WEEK</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+<tr>
+<td>DATABASE_ROUTERS</td>
+<td class="code"><pre>[]</pre></td>
+</tr>
+<tr>
+<td>YEAR_MONTH_FORMAT</td>
+<td class="code"><pre>'F Y'</pre></td>
+</tr>
+<tr>
+<td>STATICFILES_STORAGE</td>
+<td class="code"><pre>'django.contrib.staticfiles.storage.StaticFilesStorage'</pre></td>
+</tr>
+<tr>
+<td>CACHES</td>
+<td class="code"><pre>{'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+             'LOCATION': ''}}</pre></td>
+</tr>
+<tr>
+<td>SERVER_EMAIL</td>
+<td class="code"><pre>'root@localhost'</pre></td>
+</tr>
+<tr>
+<td>SESSION_COOKIE_PATH</td>
+<td class="code"><pre>'/'</pre></td>
+</tr>
+<tr>
+<td>USE_X_FORWARDED_HOST</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>IGNORABLE_404_ENDS</td>
+<td class="code"><pre>('mail.pl', 'mailform.pl', 'mail.cgi', 'mailform.cgi', 'favicon.ico', '.php')</pre></td>
+</tr>
+<tr>
+<td>MIDDLEWARE_CLASSES</td>
+<td class="code"><pre>('django.middleware.common.CommonMiddleware',
+ 'django.contrib.sessions.middleware.SessionMiddleware',
+ 'django.contrib.auth.middleware.AuthenticationMiddleware',
+ 'django.contrib.messages.middleware.MessageMiddleware')</pre></td>
+</tr>
+<tr>
+<td>USE_I18N</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+<tr>
+<td>THOUSAND_SEPARATOR</td>
+<td class="code"><pre>','</pre></td>
+</tr>
+<tr>
+<td>SECRET_KEY</td>
+<td class="code"><pre>'********************'</pre></td>
+</tr>
+<tr>
+<td>LANGUAGE_COOKIE_NAME</td>
+<td class="code"><pre>'django_language'</pre></td>
+</tr>
+<tr>
+<td>FILE_UPLOAD_TEMP_DIR</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>TRANSACTIONS_MANAGED</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>LOGGING_CONFIG</td>
+<td class="code"><pre>'django.utils.log.dictConfig'</pre></td>
+</tr>
+<tr>
+<td>TEMPLATE_LOADERS</td>
+<td class="code"><pre>('django.template.loaders.filesystem.Loader',
+ 'django.template.loaders.app_directories.Loader')</pre></td>
+</tr>
+<tr>
+<td>TEMPLATE_DEBUG</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+<tr>
+<td>AUTHENTICATION_BACKENDS</td>
+<td class="code"><pre>('django.contrib.auth.backends.ModelBackend',)</pre></td>
+</tr>
+<tr>
+<td>TEST_DATABASE_COLLATION</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>FORCE_SCRIPT_NAME</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>CACHE_BACKEND</td>
+<td class="code"><pre>'locmem://'</pre></td>
+</tr>
+<tr>
+<td>OPENBTS_PATH</td>
+<td class="code"><pre>'/home/digiman/openbts/apps'</pre></td>
+</tr>
+<tr>
+<td>SESSION_COOKIE_SECURE</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>CSRF_COOKIE_DOMAIN</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>FILE_CHARSET</td>
+<td class="code"><pre>'utf-8'</pre></td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td class="code"><pre>True</pre></td>
+</tr>
+<tr>
+<td>SESSION_FILE_PATH</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>SMQUEUE_PATH</td>
+<td class="code"><pre>'/home/digiman/smqueue/smqueue'</pre></td>
+</tr>
+<tr>
+<td>DEFAULT_FILE_STORAGE</td>
+<td class="code"><pre>'django.core.files.storage.FileSystemStorage'</pre></td>
+</tr>
+<tr>
+<td>INSTALLED_APPS</td>
+<td class="code"><pre>['django.contrib.auth',
+ 'django.contrib.contenttypes',
+ 'django.contrib.sessions',
+ 'django.contrib.sites',
+ 'django.contrib.messages',
+ 'django.contrib.staticfiles',
+ 'webgui']</pre></td>
+</tr>
+<tr>
+<td>LANGUAGES</td>
+<td class="code"><pre>(('ar', 'Arabic'),
+ ('az', 'Azerbaijani'),
+ ('bg', 'Bulgarian'),
+ ('bn', 'Bengali'),
+ ('bs', 'Bosnian'),
+ ('ca', 'Catalan'),
+ ('cs', 'Czech'),
+ ('cy', 'Welsh'),
+ ('da', 'Danish'),
+ ('de', 'German'),
+ ('el', 'Greek'),
+ ('en', 'English'),
+ ('en-gb', 'British English'),
+ ('es', 'Spanish'),
+ ('es-ar', 'Argentinian Spanish'),
+ ('es-mx', 'Mexican Spanish'),
+ ('es-ni', 'Nicaraguan Spanish'),
+ ('et', 'Estonian'),
+ ('eu', 'Basque'),
+ ('fa', 'Persian'),
+ ('fi', 'Finnish'),
+ ('fr', 'French'),
+ ('fy-nl', 'Frisian'),
+ ('ga', 'Irish'),
+ ('gl', 'Galician'),
+ ('he', 'Hebrew'),
+ ('hi', 'Hindi'),
+ ('hr', 'Croatian'),
+ ('hu', 'Hungarian'),
+ ('id', 'Indonesian'),
+ ('is', 'Icelandic'),
+ ('it', 'Italian'),
+ ('ja', 'Japanese'),
+ ('ka', 'Georgian'),
+ ('km', 'Khmer'),
+ ('kn', 'Kannada'),
+ ('ko', 'Korean'),
+ ('lt', 'Lithuanian'),
+ ('lv', 'Latvian'),
+ ('mk', 'Macedonian'),
+ ('ml', 'Malayalam'),
+ ('mn', 'Mongolian'),
+ ('nl', 'Dutch'),
+ ('no', 'Norwegian'),
+ ('nb', 'Norwegian Bokmal'),
+ ('nn', 'Norwegian Nynorsk'),
+ ('pa', 'Punjabi'),
+ ('pl', 'Polish'),
+ ('pt', 'Portuguese'),
+ ('pt-br', 'Brazilian Portuguese'),
+ ('ro', 'Romanian'),
+ ('ru', 'Russian'),
+ ('sk', 'Slovak'),
+ ('sl', 'Slovenian'),
+ ('sq', 'Albanian'),
+ ('sr', 'Serbian'),
+ ('sr-latn', 'Serbian Latin'),
+ ('sv', 'Swedish'),
+ ('ta', 'Tamil'),
+ ('te', 'Telugu'),
+ ('th', 'Thai'),
+ ('tr', 'Turkish'),
+ ('uk', 'Ukrainian'),
+ ('ur', 'Urdu'),
+ ('vi', 'Vietnamese'),
+ ('zh-cn', 'Simplified Chinese'),
+ ('zh-tw', 'Traditional Chinese'))</pre></td>
+</tr>
+<tr>
+<td>DATABASE_ENGINE</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>DATABASE_NAME</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>COMMENTS_FIRST_FEW</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+<tr>
+<td>PREPEND_WWW</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>SESSION_COOKIE_HTTPONLY</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>DATABASE_PORT</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>DEBUG_PROPAGATE_EXCEPTIONS</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>MONTH_DAY_FORMAT</td>
+<td class="code"><pre>'F j'</pre></td>
+</tr>
+<tr>
+<td>LOGIN_URL</td>
+<td class="code"><pre>'/accounts/login/'</pre></td>
+</tr>
+<tr>
+<td>SESSION_EXPIRE_AT_BROWSER_CLOSE</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>TIME_FORMAT</td>
+<td class="code"><pre>'P'</pre></td>
+</tr>
+<tr>
+<td>DATE_INPUT_FORMATS</td>
+<td class="code"><pre>('%Y-%m-%d',
+ '%m/%d/%Y',
+ '%m/%d/%y',
+ '%b %d %Y',
+ '%b %d, %Y',
+ '%d %b %Y',
+ '%d %b, %Y',
+ '%B %d %Y',
+ '%B %d, %Y',
+ '%d %B %Y',
+ '%d %B, %Y')</pre></td>
+</tr>
+<tr>
+<td>CSRF_COOKIE_NAME</td>
+<td class="code"><pre>'csrftoken'</pre></td>
+</tr>
+<tr>
+<td>EMAIL_HOST_PASSWORD</td>
+<td class="code"><pre>'********************'</pre></td>
+</tr>
+<tr>
+<td>PASSWORD_RESET_TIMEOUT_DAYS</td>
+<td class="code"><pre>'********************'</pre></td>
+</tr>
+<tr>
+<td>CACHE_MIDDLEWARE_ALIAS</td>
+<td class="code"><pre>'default'</pre></td>
+</tr>
+<tr>
+<td>SESSION_SAVE_EVERY_REQUEST</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>ADMIN_MEDIA_PREFIX</td>
+<td class="code"><pre>'/static/admin/'</pre></td>
+</tr>
+<tr>
+<td>NUMBER_GROUPING</td>
+<td class="code"><pre>0</pre></td>
+</tr>
+<tr>
+<td>SESSION_ENGINE</td>
+<td class="code"><pre>'django.contrib.sessions.backends.db'</pre></td>
+</tr>
+<tr>
+<td>CSRF_FAILURE_VIEW</td>
+<td class="code"><pre>'django.views.csrf.csrf_failure'</pre></td>
+</tr>
+<tr>
+<td>COMMENTS_SKETCHY_USERS_GROUP</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>LOGIN_REDIRECT_URL</td>
+<td class="code"><pre>'/accounts/profile/'</pre></td>
+</tr>
+<tr>
+<td>LOGGING</td>
+<td class="code"><pre>{'disable_existing_loggers': False,
+ 'handlers': {'mail_admins': {'class': 'django.utils.log.AdminEmailHandler',
+                              'level': 'ERROR'}},
+ 'loggers': {'django.request': {'handlers': ['mail_admins'],
+                                'level': 'ERROR',
+                                'propagate': True}},
+ 'version': 1}</pre></td>
+</tr>
+<tr>
+<td>CACHE_MIDDLEWARE_KEY_PREFIX</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>LOCALE_PATHS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>TEMPLATE_STRING_IF_INVALID</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>COMMENTS_ALLOW_PROFANITIES</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>LOGOUT_URL</td>
+<td class="code"><pre>'/accounts/logout/'</pre></td>
+</tr>
+<tr>
+<td>EMAIL_USE_TLS</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>TEMPLATE_DIRS</td>
+<td class="code"><pre>('/opt/openbts-webui/webgui/html',)</pre></td>
+</tr>
+<tr>
+<td>FIXTURE_DIRS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>EMAIL_HOST</td>
+<td class="code"><pre>'localhost'</pre></td>
+</tr>
+<tr>
+<td>DATE_FORMAT</td>
+<td class="code"><pre>'N j, Y'</pre></td>
+</tr>
+<tr>
+<td>MEDIA_ROOT</td>
+<td class="code"><pre>'/opt/openbts-webui/webgui/media'</pre></td>
+</tr>
+<tr>
+<td>ADMINS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>FORMAT_MODULE_PATH</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>DEFAULT_FROM_EMAIL</td>
+<td class="code"><pre>'webmaster@localhost'</pre></td>
+</tr>
+<tr>
+<td>ADV_PREFIXES</td>
+<td class="code"><pre>['CLI',
+ 'Control.GSMTAP',
+ 'Control.LUR',
+ 'Control.Reporting',
+ 'Control.TMSITable',
+ 'Control.VEA',
+ 'GSM.CCCH',
+ 'GSM.CellSelection',
+ 'GSM.Channels',
+ 'GSM.Identity',
+ 'GSM.MS',
+ 'GSM.MaxSpeechLatency',
+ 'GSM.RACH',
+ 'GSM.Radio',
+ 'GSM.RRLP',
+ 'GSM.Timer',
+ 'Log',
+ 'NTP',
+ 'RTP',
+ 'SIP',
+ 'SMS',
+ 'SubscriberRegistry',
+ 'TRX']</pre></td>
+</tr>
+<tr>
+<td>STATICFILES_DIRS</td>
+<td class="code"><pre>('/home/digiman/django/mysite/static',)</pre></td>
+</tr>
+<tr>
+<td>MEDIA_URL</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>DATETIME_FORMAT</td>
+<td class="code"><pre>'N j, Y, P'</pre></td>
+</tr>
+<tr>
+<td>IGNORABLE_404_STARTS</td>
+<td class="code"><pre>('/cgi-bin/', '/_vti_bin', '/_vti_inf')</pre></td>
+</tr>
+<tr>
+<td>SITE_ID</td>
+<td class="code"><pre>1</pre></td>
+</tr>
+<tr>
+<td>DISALLOWED_USER_AGENTS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>ALLOWED_INCLUDE_ROOTS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>DECIMAL_SEPARATOR</td>
+<td class="code"><pre>'.'</pre></td>
+</tr>
+<tr>
+<td>SHORT_DATE_FORMAT</td>
+<td class="code"><pre>'m/d/Y'</pre></td>
+</tr>
+<tr>
+<td>DATABASE_USER</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>TEST_RUNNER</td>
+<td class="code"><pre>'django.test.simple.DjangoTestSuiteRunner'</pre></td>
+</tr>
+<tr>
+<td>TIME_ZONE</td>
+<td class="code"><pre>'America/Argentina/Buenos_Aires'</pre></td>
+</tr>
+<tr>
+<td>FILE_UPLOAD_MAX_MEMORY_SIZE</td>
+<td class="code"><pre>2621440</pre></td>
+</tr>
+<tr>
+<td>SMQ_ADV_PREFIXES</td>
+<td class="code"><pre>['LOG',
+ 'SIP',
+ 'Asterisk',
+ 'Debug',
+ 'SMS',
+ 'Bounce',
+ 'SC',
+ 'SubscriberRegistry']</pre></td>
+</tr>
+<tr>
+<td>EMAIL_BACKEND</td>
+<td class="code"><pre>'django.core.mail.backends.smtp.EmailBackend'</pre></td>
+</tr>
+<tr>
+<td>DEFAULT_TABLESPACE</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>TEMPLATE_CONTEXT_PROCESSORS</td>
+<td class="code"><pre>('django.contrib.auth.context_processors.auth',
+ 'django.core.context_processors.debug',
+ 'django.core.context_processors.i18n',
+ 'django.core.context_processors.media',
+ 'django.core.context_processors.static',
+ 'django.contrib.messages.context_processors.messages')</pre></td>
+</tr>
+<tr>
+<td>SESSION_COOKIE_AGE</td>
+<td class="code"><pre>1209600</pre></td>
+</tr>
+<tr>
+<td>SETTINGS_MODULE</td>
+<td class="code"><pre>'openbts-webui.settings'</pre></td>
+</tr>
+<tr>
+<td>USE_ETAGS</td>
+<td class="code"><pre>False</pre></td>
+</tr>
+<tr>
+<td>SBR_ADV_PREFIXES</td>
+<td class="code"><pre>['Log', 'SubscriberRegistry']</pre></td>
+</tr>
+<tr>
+<td>LANGUAGES_BIDI</td>
+<td class="code"><pre>('he', 'ar', 'fa')</pre></td>
+</tr>
+<tr>
+<td>DEFAULT_INDEX_TABLESPACE</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>INTERNAL_IPS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>STATIC_URL</td>
+<td class="code"><pre>'/static/'</pre></td>
+</tr>
+<tr>
+<td>EMAIL_PORT</td>
+<td class="code"><pre>25</pre></td>
+</tr>
+<tr>
+<td>SHORT_DATETIME_FORMAT</td>
+<td class="code"><pre>'m/d/Y P'</pre></td>
+</tr>
+<tr>
+<td>ABSOLUTE_URL_OVERRIDES</td>
+<td class="code"><pre>{}</pre></td>
+</tr>
+<tr>
+<td>DATABASE_OPTIONS</td>
+<td class="code"><pre>{}</pre></td>
+</tr>
+<tr>
+<td>CACHE_MIDDLEWARE_SECONDS</td>
+<td class="code"><pre>600</pre></td>
+</tr>
+<tr>
+<td>BANNED_IPS</td>
+<td class="code"><pre>()</pre></td>
+</tr>
+<tr>
+<td>DATETIME_INPUT_FORMATS</td>
+<td class="code"><pre>('%Y-%m-%d %H:%M:%S',
+ '%Y-%m-%d %H:%M',
+ '%Y-%m-%d',
+ '%m/%d/%Y %H:%M:%S',
+ '%m/%d/%Y %H:%M',
+ '%m/%d/%Y',
+ '%m/%d/%y %H:%M:%S',
+ '%m/%d/%y %H:%M',
+ '%m/%d/%y')</pre></td>
+</tr>
+<tr>
+<td>DATABASE_PASSWORD</td>
+<td class="code"><pre>'********************'</pre></td>
+</tr>
+<tr>
+<td>COMMENTS_MODERATORS_GROUP</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+<tr>
+<td>PROFANITIES_LIST</td>
+<td class="code"><pre>'********************'</pre></td>
+</tr>
+<tr>
+<td>EMAIL_HOST_USER</td>
+<td class="code"><pre>''</pre></td>
+</tr>
+<tr>
+<td>COMMENTS_BANNED_USERS_GROUP</td>
+<td class="code"><pre>None</pre></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="explanation">
+<p>
+      You're seeing this error because you have <code>DEBUG = True</code> in your
+      Django settings file. Change that to <code>False</code>, and Django will
+      display a standard 500 page.
+    </p>
+</div>
+</body>
+</html>

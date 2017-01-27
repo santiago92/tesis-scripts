@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>Smqueue - Actions</title>
+<script src="/media/js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	function loadTabs(){
+		var tabs = $('#tabs-titles li'); //grab tabs
+		var contents = $('#tabs-contents div'); //grab contents
+		tabs.bind('click',function(){
+		contents.hide(); //hide all contents
+		tabs.removeClass('current'); //remove 'current' classes
+		$(contents[$(this).index()]).show(); //show tab content that matches tab title index
+		$(this).addClass('current'); //add current class on clicked tab title
+	});}
+	</script>
+<link href="media/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload="loadTabs()">
+<div id="cssmenu">
+<ul>
+<li><a href="openbts/main"><span>OpenBTS</span></a></li>
+<li class="active"><a href="smqueue/actions"><span>Smqueue</span></a></li>
+<li><a href="subscriberregistry/actions"><span>SubscriberRegistry</span></a></li>
+</ul>
+</div>
+<div id="submenu">
+<ul class="submenu">
+<li><a class="active" href="smqueue/actions"><span>Actions</span></a></li>
+<li><a href="smqueue/configuration"><span>Advanced</span></a></li>
+</ul>
+</div>
+<div id="content">
+<ul id="tabs-titles">
+<li class="current">Start Smqueue</li>
+</ul>
+<div id="tabs-contents">
+<div class="content">
+<form action="/smqueue/actions/" method="post">
+<input name="command" type="hidden" value="start"/>
+<br/>
+<input type="submit" value="Start Smqueue"/>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
